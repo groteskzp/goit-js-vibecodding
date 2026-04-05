@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <script src="6_1.js" defer></script>
+    <h1 id="title" class="title">Welcome to DOM Practice</h1>
+    <p id="paragraph">This is a simple paragraph for manipulation.</p>
+    <button id="changeTextBtn">Change Text</button>
+    <button id="addElementBtn">Add Element</button>
+    <button id="removeElementBtn">Remove Element</button>
+    <div id="container">
+        <button type="button" data-action="save">Save text</button>
+        <button type="button" data-action="close">Close editor</button>
+
+    </div>
+    <section>
+        <!-- <h2>Popular technologies</h2> -->
+        <!-- <ul class="list"></ul> -->
+    <ul class="list">
+        <li class="list-item">HTML</li>
+        <li class="list-item">CSS</li>
+        <li class="list-item">JavaScript</li>
+    </ul>
+    </section>
+    <section class="events">
+        <button class="my-button">Next</button>
+
+
+    </section>
+    <section class="form">
+        <form class="form" autocomplete="off">
+            <input type="text" name="login" placeholder="Login">
+            <input type="password" name="password" placeholder="Password">
+            <button class="btn" type="submit">Register</button>
+            <!-- <input type="text" class="text-input" /> -->
+            <p>Text field value input: <span class="output"></span></p>
+            <p>Text field value change: <span class="change"></span></p>
+<button type="button" data-action="set">Set focus to input</button>
+<button type="button" data-action="remove">Remove focus from input</button>
+<br><br>
+<input type="text" class="text-input" />
+        </form>
+    </section>
+
+    <script>
+        // Practice changing text
+        document.getElementById('changeTextBtn').addEventListener('click', function() {
+            document.getElementById('paragraph').textContent = 'Text has been changed!';
+        });
+
+        // Practice adding an element
+        document.getElementById('addElementBtn').addEventListener('click', function() {
+            const newElement = document.createElement('p');
+            newElement.textContent = 'New element added!';
+            document.getElementById('container').appendChild(newElement);
+        });
+
+        // Practice removing an element
+        document.getElementById('removeElementBtn').addEventListener('click', function() {
+            const container = document.getElementById('container');
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            }
+        });
+    </script>
+</body>
+</html>

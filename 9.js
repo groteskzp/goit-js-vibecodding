@@ -75,10 +75,18 @@ const settings = {
 
 
 
+
+
+
+
+
+
 const form = document.querySelector(".feedback-form");
 const localStorageKey = "example-message"
 const textArea = form.elements.message;
 textArea.value = localStorage.getItem(localStorageKey) ?? "";
+
+
 form.addEventListener("input", (evt) => {
     localStorage.setItem(localStorageKey, evt.target.value);
 }
